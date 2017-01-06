@@ -42,7 +42,7 @@
         var url = self.options.url;
         $.ajax({
                 url: url,
-                dataType: 'json',
+                dataType: 'jsonp',
                 success: function(data){
                     var items = $.map(data, function(value,text){
                         return {

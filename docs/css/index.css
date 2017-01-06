@@ -5,3 +5,7 @@
 #myselect2{
   width:300px;
 }
+
+.has-error{
+    border-color: #a94442;
+}

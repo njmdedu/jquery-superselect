@@ -36,6 +36,12 @@
         else{
           self._output();
         }
+        if(self.options.validate){
+              setInterval(function () {
+                self._validate();
+              }, 100);
+        }
+        return self;
       },
       _ajaxLoadData: function(){
         var self = this;
@@ -97,7 +103,19 @@
           list.push('<option '+ attrs.join(' ') + '>'+ object.text +'</option>');
         })
         return list.join('');
-      }
+      },
+      //验证select是否选中，根据用户设置的validate来判断，默认validata=false
+      _validate:function(){
+        var self = this;
+
+        var val = self.$element.find(':selected').val();
+
+        if(!val){
+          self.$element.addClass('has-error');
+        }else{
+          self.$element.removeClass('has-error');
+        }
+      },
       //---------------------------------------公有方法--------------------------------------
     }
 

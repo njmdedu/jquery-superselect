@@ -4,8 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rollup -c",
+    "compress": "uglifyjs dist/jquery-superselect.js -o dist/jquery-superselect.min.js -c -m --comments /^!/",
+    "lint": "eslint src",
+    "postbuild": "npm run compress",
+    "prebuild": "npm run lint",
+    "start": "rollup -c -w"
   },
   "author": "zhangwei",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.0.0"
+  },
+  "dependencies": {
+    "jquery": "^3.1.1"
+  }
 }

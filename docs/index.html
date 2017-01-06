@@ -9,14 +9,14 @@
   <body>
     <div class="container">
       <div class="row">
-        <h1>Demo1:</h1>
+        <h2>Demo1:</h2>
         <section>
           <select id="myselect1" class="form-control" name="">
           </select>
         </section>
       </div>
       <div class="row">
-        <h1>Demo2:</h1>
+        <h2>Demo2:</h2>
         <section>
           <select id="myselect2" class="form-control" name="">
           </select>
@@ -41,10 +41,15 @@
             value:'30003',
             text:'浙江省'
           }
-        ]
+        ],
+        onChange:function(){
+          console.log('changed');
+        }
       });
 
-      $('#myselect2').superselect();
+      $('#myselect2').superselect({
+        placeholder:'-请选择demo2-',
+      });
     </script>
   </body>
 </html>

@@ -8,8 +8,11 @@
         this.$element = $(element),
         this.defaults = {
             //---------------------------------------属性--------------------------------------
-            placeholder:'-请选择-',
-            data:[]
+            placeholder: '-请选择-',
+            data: [],
+            onChange: function(){
+
+            }
         },
         this.options = $.extend({}, this.defaults, options);
     }
@@ -18,11 +21,17 @@
       //---------------------------------------私有方法--------------------------------------
       _init: function(){
         var self = this;
+        self._event();
         self._output();
       },
       _event: function(){
         var self = this;
-      }
+        if(self.$element){
+          self.$element.on('change.superselect',$.proxy(function(){
+            $.proxy(self.options.onChange,self.$element)();
+          },self));
+        }
+      },
       _output: function(){
         var self = this;
         var data = self.options.data;

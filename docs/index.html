@@ -2,12 +2,49 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link href="//cdn.bootcss.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" rel="stylesheet">
     <title>SuperSelect</title>
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/index.css" rel="stylesheet">
   </head>
   <body>
-
+    <div class="container">
+      <div class="row">
+        <h1>Demo1:</h1>
+        <section>
+          <select id="myselect1" class="form-control" name="">
+          </select>
+        </section>
+      </div>
+      <div class="row">
+        <h1>Demo2:</h1>
+        <section>
+          <select id="myselect2" class="form-control" name="">
+          </select>
+        </section>
+      </div>
+    </div>
     <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
     <script src="./js/jquery.superselect.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      $('#myselect1').superselect({
+        placeholder:'-请选择省份-',
+        data:[
+          {
+            value:'10001',
+            text:'安徽'
+          },
+          {
+            value:'20002',
+            text:'江苏'
+          },
+          {
+            value:'30003',
+            text:'浙江省'
+          }
+        ]
+      });
+
+      $('#myselect2').superselect();
+    </script>
   </body>
 </html>

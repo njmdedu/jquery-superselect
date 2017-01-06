@@ -32,7 +32,8 @@
         data:[
           {
             value:'10001',
-            text:'安徽'
+            text:'安徽',
+            selected:true
           },
           {
             value:'20002',
@@ -49,13 +50,7 @@
         }
       });
 
-      $('#myselect2').superselect({
-        placeholder:'-请选择demo2-',
-        url: 'http://scsc.mdedutech.com/test/getKVData',
-        onLoadSuccess:function(){
-          console.log('success');
-        }
-      });
+
     </script>
   </body>
 </html>

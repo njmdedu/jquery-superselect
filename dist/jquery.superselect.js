@@ -8,9 +8,16 @@
         this.$element = $(element),
         this.defaults = {
             //---------------------------------------属性--------------------------------------
-            placeholder:'-请选择-',
-            data:[],
-            onChange:function(){
+            placeholder: '-请选择-',
+            data: [],
+            url:'',
+            onChange: function(){
+
+            },
+            onLoadSuccess:function(){
+
+            },
+            onLoadError: function(){
 
             }
         },
@@ -22,13 +29,44 @@
       _init: function(){
         var self = this;
         self._event();
-        self._output();
+        if(self.options.url){
+          self._ajaxLoadData();
+        }
+        else{
+          self._output();
+        }
+      },
+      _ajaxLoadData: function(){
+        var self = this;
+        var url = self.options.url;
+        $.ajax({
+                url: url,
+                dataType: 'jsonp',
+                // data: {
+                //     q: q
+                // },
+                success: function(data){
+                    var items = $.map(data, function(value,text){
+                        return {
+                            value: value,
+                            text: text
+                        };
+                    });
+                    self.options.data = items;
+                    self._output();
+                    $.proxy(self.options.onLoadSuccess, self)();
+                },
+                error: function(e,s){
+                  console.log(e.msg)
+                  $.proxy(self.options.onLoadError, self)();
+                }
+            });
       },
       _event: function(){
         var self = this;
         if(self.$element){
-          self.$element.on('change.superselect',$.proxy(function(){
-            $.proxy(self.options.onChange,self.$element)();
+          self.$element.on('change.superselect', $.proxy(function(){
+            $.proxy(self.options.onChange, self.$element)();
           },self));
         }
       },
@@ -37,8 +75,7 @@
         var data = self.options.data;
         data.unshift({
           value: '',
-          text: self.options.placeholder,
-          selected: true
+          text: self.options.placeholder
         });
 
         if(data.length){

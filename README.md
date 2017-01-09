@@ -56,12 +56,23 @@ $('#myselect').superselect();
 
 ## Methods
 
+### isSelect
+
+判断是否已经选中值
 
 ## Events
 
 ### onChange
 
 当改变时触发事件
+
+### onLoadSuccess
+
+当成功渲染数据成功时触发事件
+
+### onLoadError
+
+当渲染数据失败时触发事件
 
 eg:
 

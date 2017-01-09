@@ -118,7 +118,7 @@
       },
       //---------------------------------------公有方法--------------------------------------
       //验证select是否已经选中
-      validate: function(){
+      isSelected: function(){
         var self = this;
         var val = self.$element.find(':selected').val();
         return !!val

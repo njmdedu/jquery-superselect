@@ -50,10 +50,10 @@
                 url: url,
                 dataType: 'jsonp',
                 success: function(data){
-                    var items = $.map(data, function(value,text){
+                    var items = $.map(data, function(object,text){
                         return {
-                            value: value,
-                            text: text
+                            value: object.value,
+                            text: object.text
                         };
                     });
                     self.options.data = items;

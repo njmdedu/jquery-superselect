@@ -50,10 +50,17 @@
                 url: url,
                 dataType: 'jsonp',
                 success: function(data){
-                    var items = $.map(data, function(value,text){
+                  var data2 = [{
+                    value:1212,
+                    text:'sss'
+                  },{
+                    value:1313,
+                    text:'aaa'
+                  }];
+                    var items = $.map(data2, function(object,text){
                         return {
-                            value: value,
-                            text: text
+                            value: object.value,
+                            text: object.text
                         };
                     });
                     self.options.data = items;

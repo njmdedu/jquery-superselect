@@ -50,14 +50,7 @@
                 url: url,
                 dataType: 'jsonp',
                 success: function(data){
-                  var data2 = [{
-                    value:1212,
-                    text:'sss'
-                  },{
-                    value:1313,
-                    text:'aaa'
-                  }];
-                    var items = $.map(data2, function(object,text){
+                    var items = $.map(data, function(object,text){
                         return {
                             value: object.value,
                             text: object.text

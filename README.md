@@ -34,7 +34,7 @@ $('#myselect').superselect();
 
 设置默认选中提示字符
 
-### validate:Bool
+### validate:Boolean
 
 默认:false，校验是否已经选择了内容
 
@@ -56,7 +56,7 @@ $('#myselect').superselect();
 
 ## Methods
 
-### isSelect
+### (Boolean) isSelected
 
 判断是否已经选中值
 

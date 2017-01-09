@@ -61,7 +61,6 @@
                     $.proxy(self.options.onLoadSuccess, self)();
                 },
                 error: function(e,s){
-                  console.log(e.msg)
                   $.proxy(self.options.onLoadError, self)();
                 }
             });

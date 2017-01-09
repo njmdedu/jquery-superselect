@@ -117,6 +117,12 @@
         }
       },
       //---------------------------------------公有方法--------------------------------------
+      //验证select是否已经选中
+      validate: function(){
+        var self = this;
+        var val = self.$element.find(':selected').val();
+        return !!val
+      }
     }
 
     $.fn.superselect = function(options) {

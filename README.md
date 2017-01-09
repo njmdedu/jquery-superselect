@@ -30,15 +30,15 @@ $('#myselect').superselect();
 
 ## Property
 
-### placeholder:String
+### placeholder: String
 
 设置默认选中提示字符
 
-### validate:Boolean
+### validate: Boolean
 
 默认:false，校验是否已经选择了内容
 
-### data:Array
+### data: Array
 
 设置加载到select的数据
 
@@ -49,7 +49,7 @@ $('#myselect').superselect();
 }
 ```
 
-### url:String
+### url: String
 
 通过设置url从服务器获取data 数据
 

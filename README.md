@@ -60,6 +60,10 @@ $('#myselect').superselect();
 
 判断是否已经选中值
 
+### (String) getValue
+
+获取已选中的值
+
 ## Events
 
 ### onChange

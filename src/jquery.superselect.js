@@ -48,7 +48,7 @@
         var url = self.options.url;
         $.ajax({
                 url: url,
-                dataType: 'jsonp',
+                dataType: 'json',
                 success: function(data){
                     var items = $.map(data, function(object,text){
                         return {
@@ -121,6 +121,11 @@
         var self = this;
         var val = self.$element.find(':selected').val();
         return !!val
+      },
+      getValue: function(){
+        var self = this;
+        var val = self.$element.find(':selected').val();
+        return val;
       }
     }
 
